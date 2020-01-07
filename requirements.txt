@@ -1,0 +1,16 @@
+auth0
+DT
+flexdashboard
+flextable
+htmlTable
+plotly
+pool
+shiny
+shinyBS
+shinydashboard
+shinyjs
+shinyjqui
+shinyLoadTest
+shinythemes
+shinyTest
+shinyWidgets
