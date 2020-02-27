@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## [1.5.1] - 2020-02-27
+
+- Upgraded datascience-r from 3.2.0 -> 3.2.1
+
 ## [1.5.0] - 2019-01-07
 
 - Upgraded base image datascience-r from 3.1.0 -> 3.2.0
