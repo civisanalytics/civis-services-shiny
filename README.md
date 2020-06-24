@@ -18,6 +18,20 @@ will give you the most recently built version of the civis-services-shiny
 image. You can replace the tag `latest` with a version number such as `1.0`
 to retrieve a reproducible environment.
 
+## Custom Docker Image with common GIS packages
+We automatically upload this image with additional GIS packages to DockerHub. For the latest version of these you can
+
+Either build the Docker image locally
+```bash
+docker build -f gis-packages.Dockerfile -t civis-services-shiny .
+```
+
+or download the image from DockerHub
+```bash
+docker pull civisanalytics/civis-services-shiny:gis-packages
+```
+
+
 # Testing Integration with the Civis Platform
 
 If you would like to test the image locally follow the steps below:

@@ -22,7 +22,7 @@ reproduce the bug.
 ### Modify the Docker image
 
 If you know exactly what needs to change, you can also
-submit a pull request to propose the change.
+submit a pull request to propose the change. Make sure to make the same changes to the gis-packages.Dockerfile so the gis-packages image is updated as well.
 
 1. Fork it ( https://github.com/civisanalytics/civis-services-shiny/fork ).
 2. Make sure you are able to build the Docker image locally (`docker build -t civis-services-shiny:test .`)
