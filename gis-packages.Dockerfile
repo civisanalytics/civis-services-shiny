@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     apt-get update ; \
     apt-get install -y libgdal-dev
 
-COPY ./requirements.txt /requirements.txt
+COPY ./gis-packages-requirements.txt /gis-packages-requirements.txt
 RUN Rscript -e "packages <- readLines('/requirements.txt'); install.packages(packages)"
 
 COPY entrypoint.sh /
