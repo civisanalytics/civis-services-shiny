@@ -1,4 +1,4 @@
-FROM civisanalytics/datascience-r:4.0.1
+FROM civisanalytics/datascience-r:4.0.2
 
 RUN apt-get update && apt-get install -y \
     git
