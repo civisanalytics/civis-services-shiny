@@ -1,7 +1,36 @@
-# Civis Services Docker Image for R
+# Civis Services Shiny
 [![CircleCI](https://circleci.com/gh/civisanalytics/civis-services-shiny/tree/master.svg?style=svg)](https://circleci.com/gh/civisanalytics/civis-services-shiny/tree/master)
 
-# Installation
+This repository provides the following components:
+
+* A Docker Image to support R Shiny applications on Civis Platform
+* A demo R Shiny app that's readily deployable on Civis Platform
+
+# Quickstart Using the Demo Application
+
+To get a sense of what a Shiny app looks like on Civis Platform:
+
+* Log on to Civis Platform.
+* From the top navigation bar, click "Publish".
+* Under "Services", click "Shiny Demo".
+
+These steps create a new Civis Platform service configured for a Shiny demo app pointing to this GitHub repository.
+The app is now ready to be deployed.
+Please follow [these instructions](https://support.civisanalytics.com/hc/en-us/articles/360001335031-Civis-Service-Deployment#StartaService/PreviewaDeployment)
+for service deployment.
+
+If you would like to start making the demo app your own by making code changes,
+you may [fork this GitHub repository](https://github.com/civisanalytics/civis-services-shiny/fork)
+where the demo app's source code is in the directory [`app/`](app).
+
+If you would like to host and use your own Docker image,
+[`Dockerfile`](Dockerfile) and [`entrypoint.sh`](entrypoint.sh) from this GitHub repository
+define the `civisanalytics/civis-services-shiny` image that you may modify
+and then host on your own DockerHub account.
+
+# Local Development
+
+## Installation
 
 Either build the Docker image locally
 ```bash
@@ -18,24 +47,21 @@ will give you the most recently built version of the civis-services-shiny
 image. You can replace the tag `latest` with a version number such as `1.0`
 to retrieve a reproducible environment.
 
-# Testing Integration with the Civis Platform
+## Testing Integration with the Civis Platform
 
 If you would like to test the image locally follow the steps below:
 
-1. Have an application available for testing.  If you don't have one handy, you can use the official example app:
-   ```
-   git clone https://github.com/rstudio/shiny_example
-   ```
 2. Build your image locally:
    ```
    docker build -t civis-services-shiny:test .
    ```
 3. Run the container:
    ```
-   docker run --rm -p 3838:3838 -e APP_DIR=/app civis-services-shiny:test
+   docker run --rm -p 3838:3838 -e APP_DIR=/app -e CIVIS_API_KEY civis-services-shiny:test
    ```
 
-   This mounts the `shiny_example` folder in the Docker container under `/app`, where the entrypoint expects to find it.  You will need to modify the run command if your application is at a different path.
+   This mounts the `app` folder in the Docker container under `/app`, where the entrypoint expects to find it.  You will need to modify the run command if your application is at a different path. 
+   It also makes the CIVIS_API_KEY environment variable accessible to the container, for initializing the Civis API client.
 
 4. Access the app at the ip of your docker host with port 3838:
    ```
