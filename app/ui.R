@@ -7,7 +7,7 @@ ui <- fluidPage(
 
     titlePanel('The Iris Dataset'),
     fluidRow(column(12,
-      dataTableOutput("table")
+      dataTableOutput("iris_datatable")
     )),
 
     titlePanel('Sepal Length vs Sepal Width'),
