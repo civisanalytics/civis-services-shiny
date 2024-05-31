@@ -15,5 +15,7 @@ ui <- fluidPage(
 
     titlePanel('Petal Length vs Petal Width'),
     plotOutput('plot_petal'),
-  )
+  ),
+  # Script to keep the shiny app from losing connection and greying out in Platform.
+  tags$head(HTML("<script type='text/javascript' src='keep-alive.js'></script>")),
 )

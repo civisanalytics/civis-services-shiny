@@ -9,6 +9,8 @@ get_civis_platform_username <- function() {
 }
 
 server <- function(input, output, session) {
+    # Keep connections to the application active.
+    observe(input$alive_count)
     # Allow the app to reconnect automatically after network failures.
     session$allowReconnect("force")
 
