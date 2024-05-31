@@ -166,8 +166,10 @@ If you would like to test the image locally follow the steps below:
    docker run --rm -p 3838:3838 -e APP_DIR=/app -e CIVIS_API_KEY civis-services-shiny:test
    ```
 
-   This mounts the `app` folder in the Docker container under `/app`, where the entrypoint expects to find it.  You will need to modify the run command if your application is at a different path. 
+   This mounts the `app` folder in the Docker container under `/app`, where the entrypoint expects to find it.
+   You will need to modify the run command if your application is at a different path.
    It also makes the CIVIS_API_KEY environment variable accessible to the container, for initializing the Civis API client.
+   However, this variable does not need to be defined in order for the app to run.
 
 3. Visit `http://0.0.0.0:3838` to access your app.
 
