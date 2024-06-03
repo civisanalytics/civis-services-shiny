@@ -20,7 +20,7 @@ server <- function(input, output, session) {
     username <- get_civis_platform_username()
 
     output$current_user_display <- renderText({
-        paste("This is a demo Shiny App currently run by Civis Platform user '",
+        paste("This is a demo Shiny App currently deployed by Civis Platform user '",
               username,
               "'.",
               sep='')

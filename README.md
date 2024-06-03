@@ -116,6 +116,9 @@ File names inside <> will change from project to project
   - An R script that will be run before the application is started. Used
     to install dependencies (i.e. `install.packages("somepackage")` or
     `devtools::install_github("someuser/somepackage@v1.0.0")`).
+  - If you have a lot of dependencies to install, you may want to consider
+    creating a custom Docker image. Pre-installing dependencies via a custom
+    Docker image can significantly speed up start-up times for your app.
 - `DESCRIPTION`
   - Mainly used to add metadata to project for Showcase mode.
   - See: [display-mode docs](https://shiny.rstudio.com/articles/display-modes.html)
@@ -128,7 +131,7 @@ File names inside <> will change from project to project
     of the file.
 - `<modules>.R`
   - Modules to be shared across `ui.R` and `server.R`.
-  - Typically, `<modules>.R` is sourced from `globals.R` with
+  - Typically, `<modules>.R` is sourced from `global.R` with
     `source("modules.R")` so the modules can be used in both `ui.R`
     and `server.R`.
   - See: [modules docs](https://shiny.rstudio.com/articles/modules.html)
