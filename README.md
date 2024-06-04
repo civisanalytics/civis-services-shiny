@@ -95,7 +95,7 @@ File names inside <> will change from project to project
 
 #### File Structure Elements
 - `README.md`
-  - A description of the package and any details needed to understand and/or
+  - A description of the repository and any details needed to understand and/or
     run the application.
 - `app.R`
   - A single file that contains `server.R` and `ui.R`.
@@ -112,10 +112,8 @@ File names inside <> will change from project to project
   - Use this file to share state across `ui.R` and `server.R`.  If only
     server needs to look at the state, prefer isolating code in `server.R`.
   - See: [scoping docs](https://shiny.rstudio.com/articles/scoping.html)
-- `install.R`
-  - An R script that will be run before the application is started. Used
-    to install dependencies (i.e. `install.packages("somepackage")` or
-    `devtools::install_github("someuser/somepackage@v1.0.0")`).
+  - Dependencies may be installed in this file, or you may prefer to isolate
+    them in a dedicated `install.R` file.
   - If you have a lot of dependencies to install, you may want to consider
     creating a custom Docker image. Pre-installing dependencies via a custom
     Docker image can significantly speed up start-up times for your app.
