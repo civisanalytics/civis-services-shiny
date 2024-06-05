@@ -70,7 +70,7 @@ Top Level
 │    README.md
 │    Dockerfile
 │    app.R
-│    install.R
+│    global.R
 ```
 
 ##### Advanced / Customized
